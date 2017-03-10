@@ -5,22 +5,22 @@
 $bean="";$chip="";$cream="";$toppings[]="";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["un"])) {
-    $nameErr = "Username is required";
+    echo "<p style=\"color:red\">Username is required<p>";
   } else {
     $un = test_input($_POST["un"]);
   }
   if (empty($_POST["pass"])) {
-    $passErr = "Password is required";
+    echo "<p style=\"color:red\">Password is required</p>";
   } else {
     $pass = test_input($_POST["pass"]);
     }
   if (empty($_POST["phone"])) {
-    $phoneErr = "Cell Phone is required";
+    echo "<p style=\"color:red\">Cell Phone is required</p>";
   } else {
     $phone = test_input($_POST["phone"]);      }
 
     if (empty($_POST["onion"])) {
-      //$onionErr = "Onion selection is required";
+      echo  "<p style=\"color:red\">Onion selection is required</p>";
     } else {
       $onion = test_input($_POST["onion"]);
     }
