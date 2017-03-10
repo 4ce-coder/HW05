@@ -1,7 +1,7 @@
 <!DOCTYPE=HTML>
 <html><title>Haystack Order Form</title><body style="background-color:black; color:white;">
-<h1>HW05 - Brandon Reynolds</h1>
-<?php $un="";$em = $un . "@southern.edu";$pass="";$phone="";$passErr;$nameErr;$salsa="";$onion="";
+<h1>HW05 - </h1>
+<?php $un="";$em = $un . "@southern.edu";$pass="";$phone="000-000-0000";$passErr;$nameErr;$salsa="";$onion="";
 $bean="";$chip="";$cream="";$toppings[]="";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["un"])) {
@@ -122,7 +122,7 @@ value="Vegan">Vegan<br>
 <?php
 echo "--Report--"; echo "<br>";
 if(!empty($_POST["un"])){echo "User: " . $un; echo "<br>";}
-if(!empty($_POST["phone"])){echo "Phone number: " . $phone; echo "<br>";}
+if(!empty($_POST["phone"])){if(preg_match("/^[0-9]{3}-[0-9]{4}$/",$phone)){echo "Phone number: " . $phone; echo "<br>";}else{echo "Phone number is invalid";}}
 echo "Beans: " . $bean; echo "<br>";
 echo "Sour Cream: " . $cream; echo "<br>";
 echo "Salsa: " . $salsa; echo "<br>";
