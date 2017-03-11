@@ -1,7 +1,7 @@
 <!DOCTYPE=HTML>
 <html><title>Haystack Order Form</title><body style="background-color:black; color:white;">
-<h1>HW05 - </h1>
-<?php $un="";$em = $un . "@southern.edu";$pass="";$phone="000-000-0000";$passErr;$nameErr;$salsa="";$onion="";
+<h1>HW05</h1>
+<?php $un="";$em = $un . "@southern.edu";$pass="";$phone="000-000-0000";$salsa="";$onion="";
 $bean="";$chip="";$cream="";$toppings[]="";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["un"])) {
@@ -25,22 +25,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $onion = test_input($_POST["onion"]);
     }
     if (empty($_POST["salsa"])) {
-      //$salsaErr = "Salsa selection is required";
+      echo "<p style=\"color:red\">Salsa selection is required</p>";
     } else {
       $salsa = test_input($_POST["salsa"]);
     }
     if (empty($_POST["cream"])) {
-      //$creamErr = "Sour Cream selection is required";
+      echo  "<p style=\"color:red\">Sour Cream selection is required</p>";
     } else {
       $cream = test_input($_POST["cream"]);
     }
     if (empty($_POST["bean"])) {
-      //$beanErr = "Beans selection is required";
+      echo $bean = "<p style=\"color:red\">Beans selection is required</p>";
     } else {
       $bean = test_input($_POST["bean"]);
     }
     if (empty($_POST["chip"])) {
-      //$chipErr = "Chips selection is required";
+     echo "<p style=\"color:red\">Chips selection is required</p>";
     } else {
       $chip = test_input($_POST["chip"]);
     }
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <p><span class="error">* required field.</span></p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-Username*:    <input type="text" name="un" value="<?php echo $un;?>"> @southern.edu<br>
+dUsername*:    <input type="text" name="un" value="<?php echo $un;?>"> @southern.edu<br>
 Password*:    <input type="password" name="pass" value="<?php echo $pass;?>"><br>
 Cell Phone*:  <input type="text" name="phone" value="<?php echo $phone;?>"><br>
 Chips*:
@@ -120,7 +120,7 @@ value="Vegan">Vegan<br>
 <br><input type="submit" name="submit" value="Validate Form"><br></form>
 
 <?php
-echo "--Report--"; echo "<br>";
+echo "--Report--<br>"; 
 if(!empty($_POST["un"])){echo "User: " . $un; echo "<br>";}
 if(!empty($_POST["phone"])){if(preg_match("/^[0-9]{3}-[0-9]{4}$/",$phone)){echo "Phone number: " . $phone; echo "<br>";}else{echo "Phone number is invalid";}}
 echo "Beans: " . $bean; echo "<br>";
